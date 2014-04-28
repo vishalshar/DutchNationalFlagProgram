@@ -1,7 +1,20 @@
 /*
- * The Dutch national flag problem is a computer science programming problem proposed by Edsger Dijkstra. The flag of the Netherlands consists of three colours: red, white and blue. Given balls of these three colours arranged randomly in a line (the actual number of balls does not matter), the task is to arrange them such that all balls of the same colour are together and their collective colour groups are in the correct order. 
+ * The Dutch national flag problem is a computer science programming problem 
+proposed by Edsger Dijkstra. The flag of the Netherlands consists of three 
+colours: red, white and blue. Given balls of these three colours arranged 
+randomly in a line (the actual number of balls does not matter), the task 
+is to arrange them such that all balls of the same colour are together and 
+their collective colour groups are in the correct order. 
  * 
- * This problem can also be viewed in terms of rearranging elements of an array. Suppose each of the possible elements could be classified into exactly one of three categories (bottom, middle, and top). For example, if all elements are in 0 ... 1, the bottom could be defined as elements in 0 ... 0.1 (not including 0.1), the middle as 0.1 ... 0.3 (not including 0.3) and the top as 0.3 and greater. (The choice of these values illustrates that the categories need not be equal ranges). The problem is then to produce an array such that all "bottom" elements come before (have an index less than the index of) all "middle" elements, which come before all "top" elements.
+ * This problem can also be viewed in terms of rearranging elements of an array. 
+Suppose each of the possible elements could be classified into exactly one of 
+three categories (bottom, middle, and top). For example, if all elements are 
+in 0 ... 1, the bottom could be defined as elements in 0 ... 0.1 
+(not including 0.1), the middle as 0.1 ... 0.3 (not including 0.3) and the top 
+as 0.3 and greater. (The choice of these values illustrates that the categories 
+need not be equal ranges). The problem is then to produce an array such that 
+all "bottom" elements come before (have an index less than the index of) all 
+"middle" elements, which come before all "top" elements.
  */
 
 /**
@@ -18,10 +31,16 @@ public class DutchFlag
         dutchFlag(arr, pivot);
     }
 /**
- *  Algorithm is to have the top group grow down from the top of the array, the bottom group grow up from the bottom, and keep the middle group just above the bottom. The algorithm indexes three locations, the bottom of the top group, the top of the bottom group, and the top of the middle group. Elements that are yet to be sorted fall between the middle and the top group.[1] At each step, examine the element just above the middle. If it belongs to the top group, swap it with the element just below the top. If it belongs in the bottom, swap it with the element just above the bottom. If it is in the middle, leave it. Update the appropriate index. Complexity is Θ(n) moves and examinations.
- *
- * @param arr
- * @param pivot 
+ *  Algorithm is to have the top group grow down from the top of the array, 
+ * the bottom group grow up from the bottom, and keep the middle group just 
+ * above the bottom. The algorithm indexes three locations, the bottom of the 
+ * top group, the top of the bottom group, and the top of the middle group. 
+ * Elements that are yet to be sorted fall between the middle and the top group.
+ * At each step, examine the element just above the middle. If it belongs to the 
+ * top group, swap it with the element just below the top. If it belongs in the 
+ * bottom, swap it with the element just above the bottom. If it is in the 
+ * middle, leave it. Update the appropriate index. Complexity is Θ(n) moves 
+ * and examinations.
  */
     public static void dutchFlag(int arr[], int pivot)
     {
